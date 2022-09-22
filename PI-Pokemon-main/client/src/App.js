@@ -21,9 +21,6 @@ function App() {
           <Order />
           <Pokemons />
         </Route>
-        <Route path="/add">
-          <AddPokemon />
-        </Route>
       </Switch>
     </div>
   );

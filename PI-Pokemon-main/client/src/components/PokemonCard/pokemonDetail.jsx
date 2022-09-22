@@ -28,7 +28,9 @@ export default function PokemonDetail(){
             <h3>ID: {pokemon.id}</h3>
             <img src={pokemon.image} alt="imagen" />
             <h4>Tipos:
-                <div>{pokemon.types}</div>
+                {pokemon.types?.map((t)=>(
+                    <div>{t}</div>
+                ))}
             </h4>
             <h4>HP: {pokemon.hp}</h4>
             <h4>Ataque: {pokemon.attack}</h4>

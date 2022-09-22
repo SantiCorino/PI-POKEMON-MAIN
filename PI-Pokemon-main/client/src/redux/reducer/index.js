@@ -18,7 +18,7 @@ export default function reducer( state = initialState, action){
         case SEARCH_POKEMONS:
             return {
                 ...state,
-                filteredPokemons: action.payload
+                filteredPokemons: [action.payload]
             }
         case SORT:
             let orderedPokemons = [...state.pokemons];
