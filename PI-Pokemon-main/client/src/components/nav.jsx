@@ -3,10 +3,13 @@ import AddPokemon from "./PokemonCard/addPokemon";
 import SearchBar from "./searchBar";
 
 export default function Nav(){
-    return <nav class="menu">
-    {/* <Home /> */}
-    <SearchBar />
-    <Link to={AddPokemon}>Crear Pokémon</Link>
-  </nav>
+    return <div>
+        <Link to="/">
+            Home
+        </Link>
+        <Link to="/add">
+            Create Pokémon
+        </Link>
+    </div>
   
 }

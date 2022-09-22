@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Nav from './components/nav';
 import Order from './components/order';
 import AddPokemon from './components/PokemonCard/addPokemon';
 import PokemonDetail from './components/PokemonCard/pokemonDetail';
@@ -9,7 +10,7 @@ import SearchBar from './components/searchBar';
 function App() {
   return (
     <div className="App">
-      <SearchBar />
+      <Nav />
       <Switch>
         <Route path="/add">
           <AddPokemon />
@@ -18,6 +19,7 @@ function App() {
           <PokemonDetail />
         </Route>
         <Route path="/">
+          <SearchBar />
           <Order />
           <Pokemons />
         </Route>
