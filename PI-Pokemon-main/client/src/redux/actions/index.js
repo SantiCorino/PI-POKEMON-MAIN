@@ -4,6 +4,7 @@ export const GET_ALL_POKEMONS = "GET_ALL_POKEMONS";
 export const SEARCH_POKEMONS = "SEARCH_POKEMONS";
 export const GET_POKEMON_DETAILS = "GET_POKEMON_DETAILS";
 export const CREATE_POKEMON = "CREATE_POKEMON";
+export const SORT = "SORT";
 
 export function getAllPokemons(){
     return function(dispatch){
@@ -32,5 +33,12 @@ export function searchPokemon(search){
         .catch((err)=>{
             console.log(err);
         })
+    }
+}
+
+export function sort(order){
+    return {
+        type: SORT,
+        payload: order
     }
 }

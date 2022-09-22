@@ -1,12 +1,30 @@
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import Order from './components/order';
+import AddPokemon from './components/PokemonCard/addPokemon';
+import PokemonDetail from './components/PokemonCard/pokemonDetail';
 import Pokemons from './components/PokemonCard/pokemons';
-import SearchBar from './components/SearchBar/searchBar';
+import SearchBar from './components/searchBar';
 
 function App() {
   return (
     <div className="App">
       <SearchBar />
-      <Pokemons />
+      <Switch>
+        <Route path="/add">
+          <AddPokemon />
+        </Route>
+        <Route path="/:id">
+          <PokemonDetail />
+        </Route>
+        <Route path="/">
+          <Order />
+          <Pokemons />
+        </Route>
+        <Route path="/add">
+          <AddPokemon />
+        </Route>
+      </Switch>
     </div>
   );
 }

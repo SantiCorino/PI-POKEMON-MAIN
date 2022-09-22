@@ -4,7 +4,7 @@ import { getAllPokemons } from "../../redux/actions";
 import Pokemon from "./pokemon";
 
 export default function Pokemons(){
-    let { pokemons } = useSelector((state)=>state)
+    let pokemons = useSelector((state)=>state.filteredPokemons)
     let dispatch = useDispatch()
     useEffect(()=>{
         dispatch(getAllPokemons())

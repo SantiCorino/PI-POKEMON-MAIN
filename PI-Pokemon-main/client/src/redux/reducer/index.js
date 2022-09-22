@@ -1,4 +1,4 @@
-import { CREATE_POKEMON, GET_ALL_POKEMONS, GET_POKEMON_DETAILS, SEARCH_POKEMONS } from "../actions";
+import { CREATE_POKEMON, GET_ALL_POKEMONS, GET_POKEMON_DETAILS, SEARCH_POKEMONS, SORT } from "../actions";
 
 const initialState = {
     pokemons: [],
@@ -12,13 +12,34 @@ export default function reducer( state = initialState, action){
         case GET_ALL_POKEMONS:
             return {
                 ...state,
-                pokemons: action.payload
+                pokemons: action.payload,
+                filteredPokemons: action.payload
             };
         case SEARCH_POKEMONS:
             return {
                 ...state,
-                pokemons: action.payload
+                filteredPokemons: action.payload
             }
+        case SORT:
+            let orderedPokemons = [...state.pokemons];
+            orderedPokemons = orderedPokemons.sort((a, b) => {
+                if(a.name.toLowerCase() < b.name.toLowerCase()) {
+                    return action.payload === "ascendente" ? -1 : 1;
+                }
+                if(a.name.toLowerCase() > b.name.toLowerCase()) {
+                    return action.payload === "ascendente" ? 1 : -1;
+                }
+                return 0;
+            })
+            return {
+                ...state,
+                filteredPokemons: orderedPokemons
+            };
+
+
+
+
+
         case GET_POKEMON_DETAILS:
             return {
                 ...state,
