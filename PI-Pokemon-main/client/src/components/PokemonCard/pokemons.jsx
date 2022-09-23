@@ -11,13 +11,18 @@ export default function Pokemons(){
     }, [])
     console.log(pokemons);
     return <div>
-        { pokemons.map((p)=>{ 
+        { 
+        pokemons.length ?
+        pokemons.map((p)=>{ 
             return <Pokemon 
                 id={p.id}
                 name={p.name} 
                 image={p.image}
                 types={p.types}
             />
-        }) }
+        }) :
+        <div>Estoy loading poke!</div>
+        
+        }
     </div>
 }

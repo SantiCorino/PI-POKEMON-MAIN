@@ -5,7 +5,7 @@ export default function Pokemon({id, name, image, types}){
         <li>{t}</li>
     ))
     return <div>
-        <Link to={`/${id}`} >
+        <Link to={`/pokemons/${id}`} >
             <h2>{name}</h2>
             <h3>ID: {id}</h3>
             <img src={image} alt="imagen" />

@@ -15,10 +15,6 @@ export default function PokemonDetail(){
         }
     }, [])
     console.log(pokemon);
-    // console.log(pokemon.types);
-    // let typesMap = pokemon.types.map((t)=>(
-    //     <h4>{t}</h4>
-    // ))
     return <div>
         {
             pokemon ?

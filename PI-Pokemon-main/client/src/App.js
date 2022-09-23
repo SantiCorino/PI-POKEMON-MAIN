@@ -1,5 +1,6 @@
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
+import LandingPage from './components/Landing';
 import Nav from './components/nav';
 import Order from './components/order';
 import AddPokemon from './components/PokemonCard/addPokemon';
@@ -12,16 +13,19 @@ function App() {
     <div className="App">
       <Nav />
       <Switch>
-        <Route path="/add">
-          <AddPokemon />
+        <Route exact path="/">
+          <LandingPage/>
         </Route>
-        <Route path="/:id">
-          <PokemonDetail />
-        </Route>
-        <Route path="/">
+        <Route path="/home">
           <SearchBar />
           <Order />
           <Pokemons />
+        </Route>
+        <Route path="/add">
+          <AddPokemon />
+        </Route>
+        <Route path="/pokemons/:id">
+          <PokemonDetail />
         </Route>
       </Switch>
     </div>
