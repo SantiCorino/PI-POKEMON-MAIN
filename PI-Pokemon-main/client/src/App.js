@@ -11,20 +11,22 @@ import SearchBar from './components/searchBar';
 function App() {
   return (
     <div className="App">
-      <Nav />
       <Switch>
         <Route exact path="/">
           <LandingPage/>
         </Route>
         <Route path="/home">
+          <Nav />
           <SearchBar />
           <Order />
           <Pokemons />
         </Route>
         <Route path="/add">
+          <Nav />
           <AddPokemon />
         </Route>
         <Route path="/pokemons/:id">
+          <Nav />
           <PokemonDetail />
         </Route>
       </Switch>

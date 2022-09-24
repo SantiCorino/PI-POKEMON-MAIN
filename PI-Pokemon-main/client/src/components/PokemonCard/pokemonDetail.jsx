@@ -6,7 +6,7 @@ export default function PokemonDetail(){
     const [ pokemon, setPokemon ] = useState(null)
     let { id } = useParams()
     useEffect(()=>{
-        axios.get('http://localhost:3001/api/pokemons/' + id)
+        axios.get(`http://localhost:3001/api/pokemons/${id}`)
         .then((r)=>{
             setPokemon(r.data)
         })

@@ -52,6 +52,7 @@ export default function Order(){
         <h5>Origen</h5>
         <select name="select" onChange={onSelectOriginChange}>
             <option value={"default"} hidden>Selecciona</option>
+            <option value="all">Todos</option>
             <option value="API">Original</option>
             <option value="created">Creado</option>
         </select>

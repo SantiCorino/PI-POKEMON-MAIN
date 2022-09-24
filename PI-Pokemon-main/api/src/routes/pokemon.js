@@ -75,11 +75,11 @@ router.post('/', async (req, res, next) => {
         else return res.status(400).json({ msg: 'Es necesario ingresar un tipo' });
         
         
-        res.json(newPokemon);
+        res.json({ msg: "Pokémon creado con éxito" });
     } catch (error) {
         next(error);
     }
-}); // Crea el pokemon pero no le linkea los types <--------------------
+});
 
 
 module.exports = router;

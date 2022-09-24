@@ -3,8 +3,6 @@ import axios from 'axios';
 export const GET_ALL_POKEMONS = "GET_ALL_POKEMONS";
 export const GET_TYPES = "GET_TYPES";
 export const SEARCH_POKEMONS = "SEARCH_POKEMONS";
-export const GET_POKEMON_DETAILS = "GET_POKEMON_DETAILS";
-export const CREATE_POKEMON = "CREATE_POKEMON";
 export const NAME_SORT = "NAME_SORT";
 export const ATTACK_SORT = "ATTACK_SORT";
 export const TYPE_FILTER = "TYPE_FILTER";
@@ -44,7 +42,7 @@ export function getTypes(){
 
 export function searchPokemon(search){
     return function(dispatch){
-        axios.get('http://localhost:3001/api/pokemons?name=' + search.toLowerCase())
+        axios.get(`http://localhost:3001/api/pokemons?name=${search.toLowerCase()}`)
         .then((p)=>{
             dispatch({
                 type: SEARCH_POKEMONS,
@@ -55,7 +53,7 @@ export function searchPokemon(search){
             console.log(err);
         })
     }
-}
+};
 
 export function nameSort(order){
     return {
