@@ -120,11 +120,11 @@ const getIdPokemonFromApi = async function (id){
         speed: dataPokemon.stats[5].base_stat, 
         height: dataPokemon.height, 
         weight: dataPokemon.weight, 
-        image: dataPokemon.sprites.other.dream_world.front_default
+        image: dataPokemon.sprites.other.dream_world.front_default || dataPokemon.sprites.front_default || 'https://images-na.ssl-images-amazon.com/images/I/71WkWKFRSWL.png'
     }
 };
 
-const getIdPokemonFromDb = async function(id){ // -----------> ver por que no trae el type
+const getIdPokemonFromDb = async function(id){
     let thisPokemonDb = await Pokemon.findByPk(id, {
         include: {
             model: Type,

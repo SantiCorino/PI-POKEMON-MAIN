@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { clearPokemons, getAllPokemons } from "../../redux/actions";
+import Loading from "../loading";
+import NotFound from "../notFound";
 import Pagination from "../pagination";
 import Pokemon from "./pokemon";
 
@@ -18,7 +20,7 @@ export default function Pokemons(){
     return <div>
         <div>
             { 
-            typeof(pokemons[0])==='string' ? <h1>{pokemons}</h1>:
+            typeof(pokemons[0])==='string' ? <div><NotFound/><h2>{pokemons}</h2></div> :
             pokemons.length ?
             pokemons
             .slice(
@@ -34,7 +36,7 @@ export default function Pokemons(){
                     types={p.types}
                 />
             }) :
-            <div>Estoy loading poke!</div>
+            <div><Loading/></div>
             }
         </div>
         <Pagination page={page} setPage={setPage} />

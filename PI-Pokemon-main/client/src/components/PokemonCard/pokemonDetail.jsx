@@ -2,6 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom";
 import { clearPokemons, searchPokemonDetail } from "../../redux/actions";
+import Loading from "../loading";
 
 export default function PokemonDetail(){
     const pokemon = useSelector((state)=>state.filteredPokemons[0])
@@ -37,7 +38,7 @@ export default function PokemonDetail(){
                 <button>Volver</button>
             </Link>
             </> :
-            <div>Estoy loading!</div>
+            <Loading/>
         }
     </div>
 }
