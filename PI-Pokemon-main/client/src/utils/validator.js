@@ -7,7 +7,7 @@ const validateName = (name) => {
 };
   
 const validateNum = (value) => {
-    return /^[1-9][0-9]?$|^150$/.test(value);
+    return /^\d+$/.test(value);
 };
   
 export const validateFields = (input, pokemons) => {
@@ -20,26 +20,26 @@ export const validateFields = (input, pokemons) => {
         errors.name = "Ya existe un Pokémon con ese nombre.";
     }   else if (input.image.length > 0 && !validateURL(input.image)) {
         errors.image = "Ingresa una URL de imágen válida. Formatos admitidos: jpg, jpeg, png, webp, avif, gif, svg.";
-    } else if (!validateNum(input.hp)) {
-        errors.hp = "Los HP deben ser un número entero entre 1 y 150";
-    } else if (!validateNum(input.attack)) {
-        errors.attack = "El ataque debe ser un número entero entre 1 y 150";
-    } else if (!validateNum(input.defense)) {
-        errors.defense = "La defensa debe ser un número entero entre 1 y 150";
-    } else if (!validateNum(input.speed)) {
-        errors.speed = "La velocidad debe ser un número entero entre 1 y 150";
-    } else if (!validateNum(input.height)) {
-        errors.height = "La altura debe ser un número entero entre 1 y 150";
-    } else if (!validateNum(input.weight)) {
-        errors.weight = "El peso debe ser un número entero entre 1 y 150";
+    } else if (!validateNum(input.hp) || parseInt(input.hp)<1 || parseInt(input.hp)>160) {
+        errors.hp = "Los HP deben ser un número entero entre 1 y 160";
+    } else if (!validateNum(input.attack) || parseInt(input.attack)<1 || parseInt(input.attack)>110) {
+        errors.attack = "El ataque debe ser un número entero entre 1 y 110";
+    } else if (!validateNum(input.defense) || parseInt(input.defense)<1 || parseInt(input.defense)>100) {
+        errors.defense = "La defensa debe ser un número entero entre 1 y 100";
+    } else if (!validateNum(input.speed) || parseInt(input.speed)<1 || parseInt(input.speed)>130) {
+        errors.speed = "La velocidad debe ser un número entero entre 1 y 130";
+    } else if (!validateNum(input.height || parseInt(input.height)<1 || parseInt(input.height)>50)) {
+        errors.height = "La altura debe ser un número entero entre 1 y 50";
+    } else if (!validateNum(input.weight || parseInt(input.weight)<1 || parseInt(input.weight)>4600)) {
+        errors.weight = "El peso debe ser un número entero entre 1 y 4600";
     }
     return errors;
 };
 
 export const validateSelection = (input) => {
     let errorSelection = {};
-    if (input.type.length > 3) {
-      errorSelection.types = "El Pokémon puede tener hasta 3 tipos";
+    if (input.types.length > 3 || input.types.length===0) {
+      errorSelection.types = "El Pokémon puede tener entre 1 y 3 tipos";
     }
     return errorSelection;
   };

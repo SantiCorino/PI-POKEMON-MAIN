@@ -11,36 +11,42 @@ export default function Order(){
     }, [])
 
     function onSelectNameChange(e){
-        dispatch(nameSort(e.target.value))
+        e.preventDefault();
+        dispatch(nameSort(e.target.value));
+        e.target.value="default";
     }
     function onSelectAttackChange(e){
-        dispatch(attackSort(e.target.value))
+        e.preventDefault();
+        dispatch(attackSort(e.target.value));
+        e.target.value="default";
     }
     function onSelectTypeChange(e){
         e.preventDefault();
-        dispatch(typeFilter(e.target.value))
+        dispatch(typeFilter(e.target.value));
+        e.target.value="default";
     }
     function onSelectOriginChange(e){
         e.preventDefault();
-        dispatch(originFilter(e.target.value))
+        dispatch(originFilter(e.target.value));
+        e.target.value="default";
     }
 
     return <div>
-        <h5>Nombre</h5>
+        {/* <h5>Nombre</h5> */}
         <select name="select" onChange={onSelectNameChange}>
-            <option value={"default"} hidden>Orden</option>
+            <option value={"default"} hidden>Nombre</option>
             <option value="ascendente">A-Z</option>
             <option value="descendente">Z-A</option>
         </select>
-        <h5>Ataque</h5>
+        {/* <h5>Ataque</h5> */}
         <select name="select" onChange={onSelectAttackChange}>
-            <option value={"default"} hidden>Orden</option>
+            <option value={"default"} hidden>Ataque</option>
             <option value="ascendente">Ascendente</option>
             <option value="descendente">Descendente</option>
         </select>
-        <h5>Tipo</h5>
+        {/* <h5>Tipo</h5> */}
         <select name="select" onChange={onSelectTypeChange}>
-            <option value={"default"} hidden>Selecciona</option>
+            <option value={"default"} hidden>Tipo</option>
             <option value="all">Todos</option>
             {
                 types?.map((e)=>(
@@ -49,9 +55,9 @@ export default function Order(){
                 ))
             }
         </select>
-        <h5>Origen</h5>
+        {/* <h5>Origen</h5> */}
         <select name="select" onChange={onSelectOriginChange}>
-            <option value={"default"} hidden>Selecciona</option>
+            <option value={"default"} hidden>Origen</option>
             <option value="all">Todos</option>
             <option value="API">Original</option>
             <option value="created">Creado</option>

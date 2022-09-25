@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
 import axios from 'axios';
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function PokemonDetail(){
     const [ pokemon, setPokemon ] = useState(null)
     let { id } = useParams()
     useEffect(()=>{
+        /* Este es el action */
         axios.get(`http://localhost:3001/api/pokemons/${id}`)
         .then((r)=>{
             setPokemon(r.data)
         })
+        /* ----------------- */
         return ()=>{
             setPokemon(null)
         }
@@ -34,6 +36,9 @@ export default function PokemonDetail(){
             <h4>Velocidad: {pokemon.speed}</h4>
             <h4>Altura: {pokemon.height}</h4>
             <h4>Peso: {pokemon.weight}</h4>
+            <Link to="/home">
+                <button>Volver</button>
+            </Link>
             </> :
             <div>Estoy loading!</div>
         }

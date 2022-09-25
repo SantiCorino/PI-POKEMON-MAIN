@@ -120,7 +120,7 @@ const getIdPokemonFromApi = async function (id){
         speed: dataPokemon.stats[5].base_stat, 
         height: dataPokemon.height, 
         weight: dataPokemon.weight, 
-        image: dataPokemon.sprites.front_default
+        image: dataPokemon.sprites.other.dream_world.front_default
     }
 };
 

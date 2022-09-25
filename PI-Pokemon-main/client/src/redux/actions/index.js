@@ -7,6 +7,7 @@ export const NAME_SORT = "NAME_SORT";
 export const ATTACK_SORT = "ATTACK_SORT";
 export const TYPE_FILTER = "TYPE_FILTER";
 export const ORIGIN_FILTER = "ORIGIN_FILTER";
+export const CLEAR_POKEMONS = "CLEAR_POKEMONS";
 
 
 
@@ -52,6 +53,12 @@ export function searchPokemon(search){
         .catch((err)=>{
             console.log(err);
         })
+    }
+};
+
+export function clearPokemons(){
+    return {
+        type: CLEAR_POKEMONS
     }
 };
 
