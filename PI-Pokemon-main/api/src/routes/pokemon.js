@@ -16,7 +16,7 @@ router.get('/', async (req, res, next) => {
                 if (!namePokemonFromApi) {
                     let namePokemonFromDb = await getNamePokemonFromDb(nameAux);
                     if (!namePokemonFromDb) {
-                        res.status(408).json({ msg: `No hay pokemons con el nombre ${name}` })
+                        res./* status(408). */send( `No hay pokemons con el nombre ${name}` )
                     } else {
                         return res.json(namePokemonFromDb)
                     }
@@ -25,7 +25,7 @@ router.get('/', async (req, res, next) => {
                 }
             } catch (error) {
                 console.log(error);
-                res.status(404).json({ msg: `No hay pokemons con el nombre ${name}` })
+                res./* status(404). */send( `No hay pokemons con el nombre ${name}` )
             }
         } else {
             let allPokemonsFromApi = await getAllPokemonsFromApi();
@@ -73,7 +73,6 @@ router.post('/', async (req, res, next) => {
 
         } 
         else return res.status(400).json({ msg: 'Es necesario ingresar un tipo' });
-        
         
         res.json({ msg: "Pokémon creado con éxito" });
     } catch (error) {

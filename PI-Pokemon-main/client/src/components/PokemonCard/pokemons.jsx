@@ -13,10 +13,12 @@ export default function Pokemons(){
         return ()=>{
             dispatch(clearPokemons())
         }
-    }, [])
+    }, [dispatch])
+    console.log(pokemons);
     return <div>
         <div>
             { 
+            typeof(pokemons[0])==='string' ? <h1>{pokemons}</h1>:
             pokemons.length ?
             pokemons
             .slice(

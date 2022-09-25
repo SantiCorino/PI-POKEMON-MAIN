@@ -9,7 +9,7 @@ export default function Pokemon({id, name, image, types}){
             <h2>{name}</h2>
             <h3>ID: {id}</h3>
             <img src={image} alt="imagen" />
-            <ul>
+            <ul key={id}>
                 {typesMap}
             </ul>
         </Link>

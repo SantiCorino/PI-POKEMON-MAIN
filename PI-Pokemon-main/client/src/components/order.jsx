@@ -8,7 +8,7 @@ export default function Order(){
 
     useEffect(()=>{
         dispatch(getTypes())
-    }, [])
+    }, [dispatch])
 
     function onSelectNameChange(e){
         e.preventDefault();

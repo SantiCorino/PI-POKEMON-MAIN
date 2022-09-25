@@ -1,21 +1,18 @@
-import { useEffect, useState } from "react"
-import axios from 'axios';
+import { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom";
+import { clearPokemons, searchPokemonDetail } from "../../redux/actions";
 
 export default function PokemonDetail(){
-    const [ pokemon, setPokemon ] = useState(null)
-    let { id } = useParams()
+    const pokemon = useSelector((state)=>state.filteredPokemons[0])
+    const { id } = useParams()
+    const dispatch = useDispatch()
     useEffect(()=>{
-        /* Este es el action */
-        axios.get(`http://localhost:3001/api/pokemons/${id}`)
-        .then((r)=>{
-            setPokemon(r.data)
-        })
-        /* ----------------- */
+        dispatch(searchPokemonDetail(id))
         return ()=>{
-            setPokemon(null)
+            dispatch(clearPokemons())
         }
-    }, [])
+    }, [dispatch, id])
     console.log(pokemon);
     return <div>
         {

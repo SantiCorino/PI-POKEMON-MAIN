@@ -1,4 +1,4 @@
-import { ATTACK_SORT, CLEAR_POKEMONS, GET_ALL_POKEMONS, GET_TYPES, NAME_SORT, ORIGIN_FILTER, SEARCH_POKEMONS, TYPE_FILTER } from "../actions";
+import { ATTACK_SORT, CLEAR_POKEMONS, CREATE_POKEMON, GET_ALL_POKEMONS, GET_TYPES, NAME_SORT, ORIGIN_FILTER, SEARCH_POKEMONS, SEARCH_POKEMON_DETAIL, TYPE_FILTER } from "../actions";
 
 const initialState = {
     pokemons: [],
@@ -19,8 +19,15 @@ export default function reducer( state = initialState, action){
             return {
                 ...state,
                 types: action.payload
-            }
+            };
+        case CREATE_POKEMON:
+            return state;
         case SEARCH_POKEMONS:
+            return {
+                ...state,
+                filteredPokemons: [action.payload]
+            }
+        case SEARCH_POKEMON_DETAIL:
             return {
                 ...state,
                 filteredPokemons: [action.payload]

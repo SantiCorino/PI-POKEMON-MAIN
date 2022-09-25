@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from "react-router-dom";
-import axios from 'axios';
-import { clearPokemons, getAllPokemons, getTypes } from "../../redux/actions";
+import { clearPokemons, createPokemon, getAllPokemons, getTypes } from "../../redux/actions";
 import { validateFields, validateSelection } from "../../utils/validator";
 
 export default function AddPokemon(){
@@ -95,29 +94,20 @@ export default function AddPokemon(){
     function onSubmit(e) {
         e.preventDefault();
         console.log(pokemon)
-        axios.post('http://localhost:3001/api/pokemons/', pokemon)
-        .then(()=>{
-            alert(`${pokemon.name} se creó correctamente`)
+        dispatch(createPokemon(pokemon))
+        alert(`${pokemon.name[0].toUpperCase()+pokemon.name.slice(1)} se creó correctamente`)
+        setPokemon({
+            name: '',
+            hp: '',
+            attack: '',
+            defense: '',
+            speed: '',
+            height: '',
+            weight: '',
+            types: [],
+            image: ''
         })
-        .then(()=>{
-            setPokemon({
-                name: '',
-                hp: '',
-                attack: '',
-                defense: '',
-                speed: '',
-                height: '',
-                weight: '',
-                types: [],
-                image: ''
-            })
-        })
-        .then(()=>{
-            history.push('/home')
-        })
-        .catch((err)=>{
-            console.log(err);
-        })
+        history.push('/home');
     };
 
     return <form onSubmit={onSubmit} onReset={onReset}>
