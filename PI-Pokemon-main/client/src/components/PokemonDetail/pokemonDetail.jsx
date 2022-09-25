@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link, useParams } from "react-router-dom";
 import { clearPokemons, searchPokemonDetail } from "../../redux/actions";
-import Loading from "../loading";
+import Loading from "../Loading/loading";
 
 export default function PokemonDetail(){
     const pokemon = useSelector((state)=>state.filteredPokemons[0])

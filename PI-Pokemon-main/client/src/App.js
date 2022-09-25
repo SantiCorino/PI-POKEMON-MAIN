@@ -1,12 +1,12 @@
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import LandingPage from './components/Landing';
-import Nav from './components/nav';
-import Order from './components/order';
-import AddPokemon from './components/PokemonCard/addPokemon';
-import PokemonDetail from './components/PokemonCard/pokemonDetail';
-import Pokemons from './components/PokemonCard/pokemons';
-import SearchBar from './components/searchBar';
+import LandingPage from './components/Landing/landing';
+import Nav from './components/NavBar/navBar';
+import Order from './components/Order/order';
+import AddPokemon from './components/AddPokemon/addPokemon';
+import PokemonDetail from './components/PokemonDetail/pokemonDetail';
+import Pokemons from './components/Pokemons/pokemons';
+import SearchBar from './components/SearchBar/searchBar';
 
 function App() {
   return (

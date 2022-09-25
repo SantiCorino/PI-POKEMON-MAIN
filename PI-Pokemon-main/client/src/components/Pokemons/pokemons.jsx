@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { clearPokemons, getAllPokemons } from "../../redux/actions";
-import Loading from "../loading";
-import NotFound from "../notFound";
-import Pagination from "../pagination";
-import Pokemon from "./pokemon";
+import Loading from "../Loading/loading";
+import NotFound from "../NotFound/notFound";
+import Pagination from "../Pagination/pagination";
+import Pokemon from "../Pokemon/pokemon";
 
 export default function Pokemons(){
     const pokemons = useSelector((state)=>state.filteredPokemons);

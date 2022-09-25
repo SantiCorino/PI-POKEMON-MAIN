@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { searchPokemon } from '../redux/actions';
+import { searchPokemon } from '../../redux/actions';
 import { useDispatch } from 'react-redux';
 
 export default function SearchBar(){
-    let [ search, setSearch ] = useState('');
-    let dispatch = useDispatch();
+    const [ search, setSearch ] = useState('');
+    const dispatch = useDispatch();
     function onSubmit(e){
         e.preventDefault();
         dispatch(searchPokemon(search))
@@ -19,4 +19,4 @@ export default function SearchBar(){
             <input type="submit" value="Buscar" />
         </form>
     </div>
-}
+};

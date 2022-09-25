@@ -8,7 +8,6 @@ export default function Pagination({page, setPage }){
     const nextPage = () => {
         setInput(parseInt(input) + 1);
         setPage(parseInt(page) + 1);
-        //console.log(maxPages);
     };
 
     const previousPage = () => {
@@ -42,6 +41,9 @@ export default function Pagination({page, setPage }){
             name="page"
             autoComplete="off"
             value={input}
+            type="number"
+            min="1"
+            max={Math.ceil(pokemons.length / 12)}
         />
         <p> de {Math.ceil(pokemons.length / 12)} </p>
         <button

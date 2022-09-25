@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { getAllPokemons } from "../redux/actions";
+import { getAllPokemons } from "../../redux/actions";
 
 export default function NotFound() {
     const dispatch = useDispatch();

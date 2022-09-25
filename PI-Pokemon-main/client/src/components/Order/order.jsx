@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { attackSort, getTypes, nameSort, originFilter, typeFilter } from "../redux/actions";
+import { attackSort, getTypes, nameSort, originFilter, typeFilter } from "../../redux/actions";
 
 export default function Order(){
     const types = useSelector((state)=>state.types)
@@ -32,19 +32,16 @@ export default function Order(){
     }
 
     return <div>
-        {/* <h5>Nombre</h5> */}
         <select name="select" onChange={onSelectNameChange}>
             <option value={"default"} hidden>Nombre</option>
             <option value="ascendente">A-Z</option>
             <option value="descendente">Z-A</option>
         </select>
-        {/* <h5>Ataque</h5> */}
         <select name="select" onChange={onSelectAttackChange}>
             <option value={"default"} hidden>Ataque</option>
             <option value="ascendente">Ascendente</option>
             <option value="descendente">Descendente</option>
         </select>
-        {/* <h5>Tipo</h5> */}
         <select name="select" onChange={onSelectTypeChange}>
             <option value={"default"} hidden>Tipo</option>
             <option value="all">Todos</option>
@@ -55,7 +52,6 @@ export default function Order(){
                 ))
             }
         </select>
-        {/* <h5>Origen</h5> */}
         <select name="select" onChange={onSelectOriginChange}>
             <option value={"default"} hidden>Origen</option>
             <option value="all">Todos</option>
