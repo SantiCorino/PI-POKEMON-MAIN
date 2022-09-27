@@ -1,0 +1,25 @@
+.layout {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    gap: 0px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0px;
+    padding-top: 0.4rem;
+    padding-left: 0px;
+}
+
+.etc {
+    padding-top: 30px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 97.6%;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    align-items:flex-end;
+    justify-content: center;
+}

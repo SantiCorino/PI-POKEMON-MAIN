@@ -1,3 +1,4 @@
+import s from "./pagination.module.css";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 
@@ -31,7 +32,7 @@ export default function Pagination({page, setPage }){
         setInput (e.target.value);
     };
 
-    return <div>
+    return <div className={s.pagination}>
         <button disabled={page === 1 || page < 1} onClick={previousPage}>
         Prev
         </button>

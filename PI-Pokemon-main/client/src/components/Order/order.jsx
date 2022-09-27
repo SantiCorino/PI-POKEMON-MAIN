@@ -1,3 +1,4 @@
+import s from "./order.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { attackSort, getTypes, nameSort, originFilter, typeFilter } from "../../redux/actions";
@@ -31,18 +32,18 @@ export default function Order(){
         e.target.value="default";
     }
 
-    return <div>
-        <select name="select" onChange={onSelectNameChange}>
+    return <div className={s.orderBody}>
+        <select className={s.select} name="select" onChange={onSelectNameChange}>
             <option value={"default"} hidden>Nombre</option>
             <option value="ascendente">A-Z</option>
             <option value="descendente">Z-A</option>
         </select>
-        <select name="select" onChange={onSelectAttackChange}>
+        <select className={s.select} name="select" onChange={onSelectAttackChange}>
             <option value={"default"} hidden>Ataque</option>
             <option value="ascendente">Ascendente</option>
             <option value="descendente">Descendente</option>
         </select>
-        <select name="select" onChange={onSelectTypeChange}>
+        <select className={s.select} name="select" onChange={onSelectTypeChange}>
             <option value={"default"} hidden>Tipo</option>
             <option value="all">Todos</option>
             {
@@ -52,7 +53,7 @@ export default function Order(){
                 ))
             }
         </select>
-        <select name="select" onChange={onSelectOriginChange}>
+        <select className={s.select} name="select" onChange={onSelectOriginChange}>
             <option value={"default"} hidden>Origen</option>
             <option value="all">Todos</option>
             <option value="API">Original</option>

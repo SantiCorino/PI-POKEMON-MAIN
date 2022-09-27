@@ -1,0 +1,40 @@
+.orderBody {
+   display: flex;
+   justify-content: space-around;
+   padding-left: 1em;
+   padding-right: 1em;
+   padding-top: 1em;
+   gap: 1em;
+}
+
+.select {
+   position: relative;
+   display: flex;
+   width: 20em;
+   height: 3em;
+   line-height: 3;
+   overflow: hidden;
+   border-radius: .25em;
+   width: 10vw;
+   -webkit-appearance:none;
+   -moz-appearance:none;
+   -ms-appearance:none;
+   appearance:none;
+   outline:0;
+   box-shadow:none;
+   border: 1px solid #23496f;
+   background:none;
+   background-image: none;
+   flex: 1;
+   padding: 0 1.5em;
+   color:#23496f;
+   cursor:pointer;
+   font-size: 1.1em;
+   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.select:hover {
+   background: #23496f;
+   color: #79caf9;
+   border:0!important;
+}

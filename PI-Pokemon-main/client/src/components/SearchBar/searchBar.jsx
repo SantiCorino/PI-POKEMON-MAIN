@@ -1,3 +1,4 @@
+import s from "./searchBar.module.css";
 import { useState } from 'react';
 import { searchPokemon } from '../../redux/actions';
 import { useDispatch } from 'react-redux';
@@ -13,10 +14,14 @@ export default function SearchBar(){
         e.preventDefault()
         setSearch(e.target.value)
     }
-    return <div>
-        <form onSubmit={onSubmit}>
-            <input type="text" onChange={onInputChange} value={search} />
-            <input type="submit" value="Buscar" />
+    return <div className={s.searchCont}>
+        <form onSubmit={onSubmit} className={s.searchForm}>
+            <div className={s.searchButton}>
+                <input type="submit" value="" className={s.searchSubmit} />
+            </div>
+            <input type="text" placeholder="Ingresa un nombre..." onChange={onInputChange} value={search} className={s.searchInput}/>
         </form>
     </div>
 };
+/*                 
+ */

@@ -1,17 +1,23 @@
-import { Link } from "react-router-dom"
+import s from "./pokemon.module.css";
+import { Link } from "react-router-dom";
 
 export default function Pokemon({id, name, image, types}){
     let typesMap = types.map((t)=>(
-        <li>{t}</li>
+        <h3 className={t}>{t}</h3>
     ))
-    return <div>
+    return <div className={s.aux}>
         <Link to={`/pokemons/${id}`} >
-            <h2>{name}</h2>
-            <h3>ID: {id}</h3>
-            <img src={image} alt="imagen" />
-            <ul key={id}>
-                {typesMap}
-            </ul>
+            <div className={s.card}>
+                <div className={s.nameCont}>
+                    <h2 className={s.name}>{name}</h2>
+                </div>
+                <div className={s.imgCont}>
+                    <img src={image} alt="imagen" className={s.img} />
+                </div>
+                <div key={id} className={s.types} >
+                    {typesMap}
+                </div>
+            </div>
         </Link>
     </div>
 }

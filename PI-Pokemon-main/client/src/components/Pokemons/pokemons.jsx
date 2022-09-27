@@ -1,3 +1,4 @@
+import s from "./pokemons.module.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { clearPokemons, getAllPokemons } from "../../redux/actions";
@@ -17,8 +18,8 @@ export default function Pokemons(){
         }
     }, [dispatch])
     console.log(pokemons);
-    return <div>
-        <div>
+    return <div className={s.etc} >
+        <div className={s.layout} >
             { 
             typeof(pokemons[0])==='string' ? <div><NotFound/><h2>{pokemons}</h2></div> :
             pokemons.length ?
@@ -38,7 +39,9 @@ export default function Pokemons(){
             }) :
             <div><Loading/></div>
             }
+        </div><br/>
+        <div className={s.pagination}>
+            <Pagination page={page} setPage={setPage} />
         </div>
-        <Pagination page={page} setPage={setPage} />
     </div>
 };

@@ -1,0 +1,36 @@
+.nav{
+    height:3rem;
+    min-width: 90vw;
+    width: 97.6%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #d01824;
+}
+
+.homeLink {
+    width: 3rem;
+    height: 3rem;
+    padding-left: 1.7rem;
+}
+
+.addLink {
+    width: 6.5rem;
+    height: 6.5rem;
+}
+
+.homeLink:hover {
+    filter: drop-shadow(0 0 20px #ffffff80);
+}
+
+.addLink:hover {
+    filter: drop-shadow(0 0 20px #ffffff80);
+}
+
+a { 
+    text-decoration: none; 
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
