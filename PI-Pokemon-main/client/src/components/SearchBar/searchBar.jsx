@@ -16,12 +16,7 @@ export default function SearchBar(){
     }
     return <div className={s.searchCont}>
         <form onSubmit={onSubmit} className={s.searchForm}>
-            <div className={s.searchButton}>
-                <input type="submit" value="" className={s.searchSubmit} />
-            </div>
             <input type="text" placeholder="Ingresa un nombre..." onChange={onInputChange} value={search} className={s.searchInput}/>
         </form>
     </div>
 };
-/*                 
- */

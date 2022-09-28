@@ -1,0 +1,52 @@
+.containerAdd {
+    background-image: url('https://www.pixelstalk.net/wp-content/uploads/2016/07/8-Bit-Backgrounds-HD-1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height:100%;
+    min-width: 90vw;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    padding-top: 3rem;
+}
+
+.addError {
+    color:#ef1221ff;
+    margin: 0 0 1rem 0;
+}
+
+.addForm {
+    padding: 1.5rem 3rem 2rem 0;
+}
+
+.addImg {
+    padding: 2rem 2rem 2rem 0;
+
+}
+
+.addItem {
+    width: 22rem;
+    height: 3rem;
+    border: 2px solid #fecb06ff;
+    border-radius: 1rem;
+    background-color: rgba(233, 167, 1, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:baseline;
+}
+
+.addLabel {
+    padding: .7rem 0 0 0; 
+    width: 7rem;
+}
+
+.addInput {
+    margin: .5rem 0 1rem 0;
+    width: 10rem;
+    height: 1.5rem;
+    border-radius: .5rem;
+    border: 0;
+}

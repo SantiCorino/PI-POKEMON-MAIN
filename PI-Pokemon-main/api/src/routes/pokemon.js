@@ -30,7 +30,7 @@ router.get('/', async (req, res, next) => {
         } else {
             let allPokemonsFromApi = await getAllPokemonsFromApi();
             let allPokemonsFromDb = await getAllPokemonsFromDb();
-            let details = [...allPokemonsFromApi, ...allPokemonsFromDb];
+            let details = [...allPokemonsFromDb, ...allPokemonsFromApi];
             res.send(details);
         }
     } catch (error) {

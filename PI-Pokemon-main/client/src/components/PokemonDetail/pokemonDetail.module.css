@@ -1,0 +1,124 @@
+.containerDetail {
+    background-image: url('https://i.imgur.com/qc0FvEk.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+    min-width: 90vw;
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    justify-content: space-around;
+    padding-top: 3rem;
+}
+
+.detailName {
+    margin: 0;
+    padding: 1rem 3rem .5rem 3rem;
+    border-bottom: 1px solid #365fabff;
+}
+
+.detailAsh {
+    height: 80%;
+    padding: 2.5rem 3rem 4rem 4.5rem;
+}
+
+.detailImg {
+    max-width: 18rem;
+    height: 20rem;
+    padding: 4.5rem 2.5rem 2rem 2.5rem;
+}
+
+.detailList {
+    color: #f6f6f6ff;
+    border: 1px solid #365fabff;
+    border-radius: 1.5rem;
+    margin: 0!important;
+    padding: 0 1.5rem 0 1.5rem;
+    background: rgba(20, 40, 80, 0.2) ;
+    padding-bottom: 1rem;
+}
+
+.detailLabel {
+    width: 40%;
+    border: 1px solid #365fabff;
+    padding: 0.5rem 1rem .5rem 1rem ;
+    border-radius: .5rem 0 0 .5rem;
+    align-self: center;
+    margin: .7rem 0 .7rem 0;
+    background-color:#365fabff ;
+}
+
+.detailValue {
+    width: 60%;
+    border: 1px solid #365fabff;
+    padding: 0.5rem 1rem .5rem 1rem ;
+    border-radius: 0 .5rem .5rem 0;
+    align-self: center;
+    margin: .7rem 0 .7rem 0;
+}
+
+.detailCont {
+    width: 20rem ;
+    display: flex;
+    gap: 0;
+    justify-content:center;
+}
+
+.detailTypesCont {
+    width: 20rem ;
+    display: flex;
+    gap: 0;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.detailTypesLabel {
+    width: 40%;
+    border: 1px solid #365fabff;
+    padding: .5rem 0 0 0;
+    border-radius: .5rem;
+    justify-content: space-around;
+    margin: .9rem 0 .9rem 0;
+    width: 20rem ;
+    display: flex;
+    flex-direction: column;
+}
+
+.detailTypesValue {
+    width: 50%;
+    max-width: 6rem;
+    border: 1px solid #365fabff;
+    padding: 0.5rem 1rem .5rem 1rem ;
+    border-radius: .5rem;
+    margin: .7rem 0 .9rem 0;
+    background-color:#365fabff ;
+}
+
+.detailTypesAux {
+    display: flex;
+    justify-content: space-around;
+}
+
+.detailBackButton {
+    margin: 1rem 0 1rem 0;
+    width: 12rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border: 0;
+    background-color:#365fabff ;
+    color:#f6f6f6ff ;
+    font-size: medium;
+}
+
+.detailBackContent {
+    padding: 0 0 2rem 0;
+    margin: 1rem 0 .5rem 0;
+}
+
+.detailBackButton:hover {
+    border: 1px solid #365fabff;
+    background-color: rgba(54, 95, 171, 0);
+    filter: drop-shadow(0 0 1.5rem #ffffff);
+    cursor: pointer;
+}

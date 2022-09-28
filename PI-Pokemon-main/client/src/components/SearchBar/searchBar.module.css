@@ -1,12 +1,12 @@
 .searchCont{
-	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 0;
 }
 
 .searchForm {
-	background: #3c528eff;
+	background: #365fab;
 	position: relative;
 	padding: 0.5rem;
 	border-radius: 50px;
@@ -17,28 +17,20 @@
     width: 10rem;
 }
 
-.searchForm .searchButton{
-	width: 2.5rem;
-	height: 2.5rem;
-	border-radius: 50%;
-	background: #7a5cf0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: #fff;
-	margin-right: 0.5rem;
-	cursor: pointer;
-}
-
 .searchForm .searchInput{
 	outline: none;
 	border: 0;
-	background: #7a5cf0;
+	background: #5c7ab1;
 	border-radius: 50px;
-	padding-left: 1rem;
+	padding-left: 1.5rem;
 	width: 20rem; 
 	height: 2.5rem;
 	color: #fff;
+	font-size: 100%;
+}
+
+.searchCont:hover{
+	filter: drop-shadow(0 0 20px #ffffff80);
 }
 
 ::placeholder {
