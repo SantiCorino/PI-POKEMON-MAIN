@@ -17,11 +17,14 @@ export default function Pokemons(){
             dispatch(clearPokemons())
         }
     }, [dispatch])
+    function onNotFoundLoad(){
+        alert(pokemons)
+    }
     console.log(pokemons);
     return <div className={s.etc} >
         <div className={s.layout} >
             { 
-            typeof(pokemons[0])==='string' ? <div><NotFound/><h2>{pokemons}</h2></div> :
+            typeof(pokemons[0])==='string' ? <div onLoad={onNotFoundLoad}><NotFound/></div> :
             pokemons.length ?
             pokemons
             .slice(

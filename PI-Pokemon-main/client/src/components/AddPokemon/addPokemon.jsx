@@ -62,10 +62,10 @@ export default function AddPokemon(){
     function onSelectionTypes(e){
         setPokemon({
             ...pokemon,
-            types: [...new Set([
+            types: [
                 ...pokemon.types,
                 e.target.value.toLowerCase()
-            ])],
+            ],
         });
         e.target.value="default"
     };
@@ -110,9 +110,13 @@ export default function AddPokemon(){
         })
         history.push('/home');
     };
-
+    console.log(pokemon.types.length)
+    console.log(selectionError);
     return <div className={s.containerAdd}>
         <div className={s.addForm}>
+            <div>
+                <img src="https://fontmeme.com/permalink/220928/c84ccf0bf2082acb1a06d51297987613.png" alt="" className={s.addTitle} />
+            </div>
             <form onSubmit={onSubmit} onReset={onReset}>
                 <div className={s.addItem}>
                     <div className={s.addLabel}>                        
@@ -127,7 +131,9 @@ export default function AddPokemon(){
                         value={pokemon.name}
                         className={s.addInput}
                         /><br/>
-                        {error.name && <em className={s.addError}>{error.name}</em>}
+                </div>
+                <div className={s.addErrorContainer}>                        
+                    {error.name && <em className={s.addError}>{error.name}</em>}
                 </div>
                 <br/>
                 <div className={s.addItem}>
@@ -139,11 +145,13 @@ export default function AddPokemon(){
                         type="number" 
                         autoComplete="off"
                         name="hp" 
-                        placeholder="1 - 150" 
+                        placeholder="1 - 160" 
                         value={pokemon.hp} 
                         className={s.addInput}
                     /><br/>
-                    {error.hp && <em>{error.hp}</em>}
+                </div>
+                <div className={s.addErrorContainer}>                    
+                    {error.hp && <em className={s.addError}>{error.hp}</em>}
                 </div>
                 <br/>
                 <div className={s.addItem}>
@@ -157,11 +165,13 @@ export default function AddPokemon(){
                         // max="130"
                         autoComplete="off" 
                         name="attack" 
-                        placeholder="1 - 130" 
+                        placeholder="1 - 110" 
                         value={pokemon.attack} 
                         className={s.addInput}
                     /><br/>
-                    {error.attack && <em>{error.attack}</em>}
+                </div>
+                <div className={s.addErrorContainer}>                    
+                    {error.attack && <em className={s.addError}>{error.attack}</em>}
                 </div>
                 <br/>
                 <div className={s.addItem}>
@@ -173,11 +183,13 @@ export default function AddPokemon(){
                         type="number" 
                         autoComplete="off"
                         name="defense" 
-                        placeholder="1 - 150" 
+                        placeholder="1 - 100" 
                         value={pokemon.defense} 
                         className={s.addInput}
                     /><br/>
-                    {error.defense && <em>{error.defense}</em>}
+                </div>
+                <div className={s.addErrorContainer}>                    
+                    {error.defense && <em className={s.addError}>{error.defense}</em>}
                 </div>
                 <br/>
                 <div className={s.addItem}>
@@ -189,11 +201,13 @@ export default function AddPokemon(){
                         type="number" 
                         autoComplete="off"
                         name="speed" 
-                        placeholder="1 - 150" 
+                        placeholder="1 - 130" 
                         value={pokemon.speed}
                         className={s.addInput} 
                     /><br/>
-                    {error.speed && <em>{error.speed}</em>}
+                </div>
+                <div className={s.addErrorContainer}>                    
+                    {error.speed && <em className={s.addError}>{error.speed}</em>}
                 </div>
                 <br/>
                 <div className={s.addItem}>
@@ -205,11 +219,13 @@ export default function AddPokemon(){
                         type="number" 
                         autoComplete="off"
                         name="height" 
-                        placeholder="1 - 150" 
+                        placeholder="1 - 50" 
                         value={pokemon.height} 
                         className={s.addInput}
                     /><br/>
-                    {error.height && <em>{error.height}</em>}
+                </div>
+                <div className={s.addErrorContainer}>
+                    {error.height && <em className={s.addError}>{error.height}</em>}
                 </div>
                 <br/>
                 <div className={s.addItem}>
@@ -221,15 +237,16 @@ export default function AddPokemon(){
                         type="number" 
                         autoComplete="off"
                         name="weight" 
-                        placeholder="1 - 150" 
+                        placeholder="1 - 4600" 
                         value={pokemon.weight} 
                         className={s.addInput}
                     /><br/>
-                    {error.weight && <em>{error.weight}</em>}
+                </div>
+                <div className={s.addErrorContainer}>                    
+                    {error.weight && <em className={s.addError}>{error.weight}</em>}
                 </div>
                 <br/>
-                <div className={s.addItem}>
-                    <div>
+                <div className={s.addItem}>                    
                     <div className={s.addLabel}>
                         <label htmlFor="">Tipos</label><br/>
                     </div>    
@@ -243,23 +260,22 @@ export default function AddPokemon(){
                         allTypes && allTypes.map((t) => (<option value={t.name}>{t.name}</option>))
                         : null
                         }
-                    </select>:null}
-                    </div>
-                    {selectionError.errorSelection && <p>{selectionError.errorSelection}</p>}
+                    </select>:null}<br/>                    
+                </div>
+                <div className={s.addErrorContainer}>                    
+                    {selectionError.errorSelection && <em className={s.addError}>{selectionError.errorSelection}</em>}
                 </div>
                 <br/>
-                <div className={s.addItem}>
-                    {pokemon.types.map((t) => (
-                    <div>
+                <div className={s.addDeleteItem}>
+                    {pokemon.types.map((t) => (                    
                         <button
                         type="button"
                         value={t}
                         onClick={onDeletionTypes}
-                        className={s.addInput}
+                        className={s.addDeleteInput}
                         >
                         {t[0].toUpperCase()+t.slice(1)}
-                        </button>
-                    </div>
+                        </button>                    
                     ))}
                 </div>        
                 <div className={s.addItem}>
@@ -274,12 +290,14 @@ export default function AddPokemon(){
                         value={pokemon.image}
                         className={s.addInput}
                     /><br/>
-                    {error.image && <em>{error.image}</em>}
+                </div>
+                <div className={s.addErrorContainer}>                    
+                    {error.image && <em className={s.addError}>{error.image}</em>}
                 </div>
                 <br/>
-                <div>                    
-                    <input type="submit" value="Enviar al laboratorio" disabled={disabled}/>
-                    <input type="reset" value="Borrar datos" />
+                <div className={s.addButtonContainer}>                    
+                    <input type="submit" value="Enviar al laboratorio" disabled={disabled} className={s.addButtons} />
+                    <input type="reset" value="Borrar datos"  className={s.addButtons} />
                 </div>
             </form>
         </div>

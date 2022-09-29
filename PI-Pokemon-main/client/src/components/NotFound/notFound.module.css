@@ -1,0 +1,36 @@
+.containerNotFound {
+    background-image: url('https://www.larata.cl/wp-content/uploads/2016/08/pokemon-musicos.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100%;
+    min-width: 90vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+
+.notfoundImg {
+    padding: 9rem 0 0 1.5rem;
+    max-width: 38.88rem;
+    max-height: 10.26rem;
+}
+
+.notfoundButton {
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+    border: 0;
+    background-color:#365fabff ;
+    color:#f6f6f6ff ;
+    font-size: medium;
+    margin: 0 0 10rem 22rem;
+}
+
+.notfoundButton:hover {
+    border: 1px solid #365fabff;
+    background-color: rgba(54, 95, 171, 0);
+    filter: drop-shadow(0 0 1.5rem #ffffff);
+    cursor: pointer;
+}

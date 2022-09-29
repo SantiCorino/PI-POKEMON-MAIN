@@ -67,7 +67,7 @@ export function searchPokemon(search){
             })
         })
         .catch((err)=>{
-            console.log(err);
+            console.log(err && alert('Debes ingresar un nombre válido'));
         })
     }
 };

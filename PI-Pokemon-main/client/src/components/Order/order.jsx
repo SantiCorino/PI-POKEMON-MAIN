@@ -2,10 +2,11 @@ import s from "./order.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { attackSort, getTypes, nameSort, originFilter, typeFilter } from "../../redux/actions";
+import SearchBar from "../SearchBar/searchBar";
 
 export default function Order(){
     const types = useSelector((state)=>state.types)
-    let dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     useEffect(()=>{
         dispatch(getTypes())
@@ -43,6 +44,7 @@ export default function Order(){
             <option value="ascendente">Ascendente</option>
             <option value="descendente">Descendente</option>
         </select>
+        <SearchBar />
         <select className={s.select} name="select" onChange={onSelectTypeChange}>
             <option value={"default"} hidden>Tipo</option>
             <option value="all">Todos</option>

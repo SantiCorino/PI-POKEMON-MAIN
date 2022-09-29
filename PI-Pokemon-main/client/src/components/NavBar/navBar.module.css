@@ -29,8 +29,6 @@
     filter: drop-shadow(0 0 20px #ffffff80);
 }
 
-a { 
-    text-decoration: none; 
-    color: rgb(0, 0, 0);
-    cursor: pointer;
+.navImg {
+    max-height: 10rem;
 }

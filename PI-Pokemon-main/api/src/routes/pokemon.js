@@ -9,6 +9,7 @@ router.get('/', async (req, res, next) => {
     const { name } = req.query;
     await getAllTypes();
     try {
+        if(name==='') res.status(400).send('Debes ingresar un nombre')
         if(name){
             const nameAux = name.toLowerCase();
             try {
@@ -16,7 +17,7 @@ router.get('/', async (req, res, next) => {
                 if (!namePokemonFromApi) {
                     let namePokemonFromDb = await getNamePokemonFromDb(nameAux);
                     if (!namePokemonFromDb) {
-                        res.send( `No hay pokemons con el nombre ${name}` )
+                        res.send( `No hay Pokémons con el nombre ${name[0].toUpperCase()+name.slice(1)}` )
                     } else {
                         return res.json(namePokemonFromDb)
                     }
@@ -25,7 +26,7 @@ router.get('/', async (req, res, next) => {
                 }
             } catch (error) {
                 console.log(error);
-                res.send( `No hay pokemons con el nombre ${name}` )
+                res.send( `No hay Pokémons con el nombre ${name}` )
             }
         } else {
             let allPokemonsFromApi = await getAllPokemonsFromApi();

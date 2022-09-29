@@ -1,6 +1,53 @@
 .pagination {
     display: flex;
     flex-direction: row;
-    align-items:flex-end;
-    justify-content: center;
+    justify-content: space-around;
+    align-items:center ;
+    margin: 0 0 1rem 0;
+    padding: 0 0 1rem 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.pageButton{
+    width: 3rem;
+    height: 3rem;
+    padding: 0 0 .5rem 0;
+    margin: 0 1rem .1rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid hsla(224, 41%, 40%, 0.9);
+    background-color: hsla(224, 41%, 40%, 0.8);
+    color: #dcdcdcff;
+    font-size: large;
+}
+
+.prevText{
+    margin-top: .8rem;
+}
+
+.pageInput {
+    width: 2rem;
+    height: 1.5rem;
+    display: flex;
+    align-content: center;
+    background-color: #3c528e00;
+    outline: 0;
+    border: 0;
+    font-size: larger;
+    font-style: italic;
+}
+
+.totalPages {
+    font-size: larger;
+    font-style: italic;
+}
+
+.pageButton:hover {
+    background-color: #3c528eff;
+    cursor: pointer;
+}
+
+.pageButton:disabled {
+    background-color: #ef122140;
+    border: 0;
+    cursor: not-allowed;
 }

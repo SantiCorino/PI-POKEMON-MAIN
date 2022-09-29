@@ -33,8 +33,12 @@ export default function Pagination({page, setPage }){
     };
 
     return <div className={s.pagination}>
-        <button disabled={page === 1 || page < 1} onClick={previousPage}>
-        Prev
+        <button 
+            disabled={page === 1 || page < 1} 
+            onClick={previousPage} 
+            className={s.pageButton}
+        >
+            <h3 className={s.prevText}> &lt; </h3>
         </button>
         <input
             onChange={onChange}
@@ -45,13 +49,15 @@ export default function Pagination({page, setPage }){
             type="number"
             min="1"
             max={Math.ceil(pokemons.length / 12)}
+            className={s.pageInput}
         />
-        <p> de {Math.ceil(pokemons.length / 12)} </p>
+        <p className={s.totalPages}> de {Math.ceil(pokemons.length / 12)} </p>
         <button
             disabled={page === Math.ceil(pokemons.length / 12) || page > Math.ceil(pokemons.length / 12)}
             onClick={nextPage}
+            className={s.pageButton}
         >
-        Next
+            <h3 className={s.prevText}> &gt; </h3>
         </button>
     </div>
   

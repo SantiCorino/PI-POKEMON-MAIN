@@ -9,7 +9,7 @@
     display: flex;
     gap: 16px;
     justify-content: flex-end;
-    padding-top: 3rem;
+    padding-top: 0rem;
 }
 
 .addError {
@@ -17,21 +17,25 @@
     margin: 0 0 1rem 0;
 }
 
+.addTitle {
+    max-width: 22rem;
+    padding: 0 0 1rem 0;
+}
+
 .addForm {
     padding: 1.5rem 3rem 2rem 0;
 }
 
 .addImg {
-    padding: 2rem 2rem 2rem 0;
-
+    padding: 6.5rem 2rem 2rem 0;
 }
 
 .addItem {
-    width: 22rem;
+    max-width: 22rem;
     height: 3rem;
     border: 2px solid #fecb06ff;
     border-radius: 1rem;
-    background-color: rgba(233, 167, 1, 0.5);
+    background-color: #e9a70180;
     display: flex;
     flex-direction: row;
     justify-content:space-around;
@@ -45,8 +49,57 @@
 
 .addInput {
     margin: .5rem 0 1rem 0;
+    padding-left: .7rem;
     width: 10rem;
     height: 1.5rem;
     border-radius: .5rem;
     border: 0;
+    background-color: #dcdcdcff;
+    outline: 0;
+}
+
+.addButtons {
+    margin: 1rem 0 1rem 0;
+    width: 12rem;
+    height: 3rem;
+    border-radius: 1rem;
+    border: 2px solid #fecb06ff;
+    background-color:#e9a70180 ;
+    font-size: medium;
+}
+
+.addButtonContainer {
+    max-width: 22rem;
+    padding: 0;
+    display: flex;
+    gap: .5rem;
+    justify-content: space-between;
+}
+
+.addButtons:hover {
+    background-color: #fecb06ff;
+    cursor: pointer;
+}
+
+.addDeleteItem {
+    max-width: 22rem;
+    height: 3rem;
+    border: 2px solid #fecb06ff;
+    border-radius: 1rem;
+    background-color: #e9a70180;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items:baseline;
+    margin-bottom: 1.2rem;
+}
+
+.addDeleteInput {
+    margin: .78rem 0 1rem 0;
+    padding-left: .7rem;
+    width: 7rem;
+    height: 1.5rem;
+    border-radius: .5rem;
+    border: 0;
+    background-color: #dcdcdcff;
 }

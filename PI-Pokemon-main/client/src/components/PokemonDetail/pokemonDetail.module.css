@@ -15,6 +15,8 @@
     margin: 0;
     padding: 1rem 3rem .5rem 3rem;
     border-bottom: 1px solid #365fabff;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.5rem
 }
 
 .detailAsh {
@@ -105,7 +107,7 @@
     width: 12rem;
     height: 3rem;
     border-radius: 1rem;
-    border: 0;
+    border: 1px solid #365fabff;
     background-color:#365fabff ;
     color:#f6f6f6ff ;
     font-size: medium;
@@ -113,12 +115,10 @@
 
 .detailBackContent {
     padding: 0 0 2rem 0;
-    margin: 1rem 0 .5rem 0;
+    margin: .9rem 0 .5rem 0;
 }
 
 .detailBackButton:hover {
-    border: 1px solid #365fabff;
-    background-color: rgba(54, 95, 171, 0);
-    filter: drop-shadow(0 0 1.5rem #ffffff);
+    background-color: rgba(54, 95, 171, 0.5);
     cursor: pointer;
 }
