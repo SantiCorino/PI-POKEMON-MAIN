@@ -81,6 +81,11 @@
     cursor: pointer;
 }
 
+.addButtons:disabled {
+    background-color:#e9a70180 ;
+    cursor: not-allowed;
+}
+
 .addDeleteItem {
     max-width: 22rem;
     height: 3rem;

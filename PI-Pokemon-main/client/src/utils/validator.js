@@ -32,14 +32,16 @@ export const validateFields = (input, pokemons) => {
         errors.height = "La altura debe ser un número entero entre 1 y 50";
     } else if (!validateNum(input.weight) || parseInt(input.weight)<1 || parseInt(input.weight)>4600) {
         errors.weight = "El peso debe ser un número entero entre 1 y 4600";
+    } else if (input.types.length < 1 || input.types.length > 2) {
+        errors.types = "El Pokémon debe tener al menos un tipo";
     }
     return errors;
 };
 
-export const validateSelection = (input) => {
-    let errorSelection = {};
-    if (input.types.length > 3 || input.types.length===0) {
-      errorSelection.types = "El Pokémon debe tener entre 1 y 2 tipos";
-    }
-    return errorSelection;
-  };
+// export const validateSelection = (input) => {
+//     let errorSelection = {};
+//     if (input.types.length > 3 || input.types.length===0) {
+//       errorSelection.types = "El Pokémon debe tener entre 1 y 2 tipos";
+//     }
+//     return errorSelection;
+//   };

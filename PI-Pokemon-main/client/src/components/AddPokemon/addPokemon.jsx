@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from "react-router-dom";
 import { clearPokemons, createPokemon, getAllPokemons, getTypes } from "../../redux/actions";
-import { validateFields, validateSelection } from "../../utils/validator";
+import { validateFields } from "../../utils/validator";
 
 export default function AddPokemon(){
     const { pokemons } = useSelector((state)=>state);
@@ -23,7 +23,7 @@ export default function AddPokemon(){
         image: ''
     });
     const [ error, setError ] = useState({});
-    const [ selectionError, setSelectionError ] = useState({});
+    // const [ selectionError, setSelectionError ] = useState({});
     const [ disabled, setDisabled ] = useState(true);
     
     useEffect(()=>{
@@ -48,11 +48,11 @@ export default function AddPokemon(){
         }, pokemons);
         setError(validationError);
         
-        const validationTypesError = validateSelection(pokemon);
-        //const catchedErrors = {...validationError, ...validationTypesError};
-        setSelectionError(validationTypesError);
+        // const validationTypesError = validateSelection(pokemon);
+        // const catchedErrors = {...validationError, ...validationTypesError};
+        // setSelectionError(validationTypesError);
 
-        if(JSON.stringify(validationError) === "{}" && JSON.stringify(validationTypesError) === "{}") {
+        if(JSON.stringify(validationError) === "{}" /* && JSON.stringify(validationTypesError) === "{}" */) {
             setDisabled(false)
         } else {
             setDisabled(true)
@@ -110,8 +110,8 @@ export default function AddPokemon(){
         })
         history.push('/home');
     };
-    console.log(pokemon.types.length)
-    console.log(selectionError);
+    //console.log(pokemon.types.length)
+    console.log(error);
     return <div className={s.containerAdd}>
         <div className={s.addForm}>
             <div>
@@ -263,7 +263,7 @@ export default function AddPokemon(){
                     </select>:null}<br/>                    
                 </div>
                 <div className={s.addErrorContainer}>                    
-                    {selectionError.errorSelection && <em className={s.addError}>{selectionError.errorSelection}</em>}
+                    {error.types && <em className={s.addError}>{error.types}</em>}
                 </div>
                 <br/>
                 <div className={s.addDeleteItem}>
